@@ -1,0 +1,241 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Barlow', sans-serif;
+  background-color: #e9edf0;
+}
+.side-bar {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 45px;
+  position: fixed;
+  z-index: 2;
+}
+.logo {
+  width: 70px;
+}
+
+/*===============  Later Start  ===============*/
+.logo path {
+  transition: 1s;
+}
+.hamburger-clicked .logo path {
+  fill: #fff;
+}
+/*===============  Later End  ===============*/
+
+.hamburger {
+  cursor: pointer;
+  transition: opacity 0.001s 0.75s;
+}
+.hamburger div {
+  background-color: #404243;
+  height: 5px;
+  margin-top: 8px;
+  transform-origin: 20% 40%;
+  transition: 0.5s;
+}
+
+/*===============  Later Start  ===============*/
+.hamburger-clicked .hamburger div {
+  background-color: #fff;
+}
+/*===============  Later End  ===============*/
+
+.hamburger div:first-of-type,
+.hamburger div:nth-of-type(3) {
+  width: 51px;
+}
+.hamburger div:nth-of-type(2) {
+  width: 39px;
+}
+
+/*===============  Later Start  ===============*/
+.hamburger-clicked .hamburger div:first-of-type {
+  width: 27px;
+  transform: rotate(50deg) translateY(200%);
+}
+.hamburger-clicked .hamburger div:nth-of-type(2) {
+  opacity: 0;
+}
+.hamburger-clicked .hamburger div:nth-of-type(3) {
+  width: 27px;
+  transform: rotate(-50deg) translateY(-200%);
+}
+/*===============  Later End  ===============*/
+
+nav {
+  background-color: #1a1d1f;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  /* clip-path: circle(5% at 4.5% 92%); */
+  transition: 0.25s;
+  /* opacity: 0; */
+}
+
+/*===============  Later Start  ===============*/
+.hamburger-clicked nav {
+  clip-path: circle(100%);
+  transition: clip-path 1s;
+  opacity: 1;
+}
+/*===============  Later End  ===============*/
+
+nav .navbar-container {
+  max-width: 855px;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+}
+nav .links {
+  display: flex;
+  flex-direction: column;
+}
+nav .links a {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 38px;
+  color: #ffffff;
+  margin-top: 16px;
+  /* opacity: 0; */
+}
+
+/*===============  Later Start  ===============*/
+.hamburger-clicked nav .links a {
+  opacity: 1;
+  transition: 1s;
+}
+nav .links a:nth-of-type(1) {
+  transition-delay: 0.1s;
+}
+nav .links a:nth-of-type(2) {
+  transition-delay: 0.2s;
+}
+nav .links a:nth-of-type(3) {
+  transition-delay: 0.3s;
+}
+nav .links a:nth-of-type(4) {
+  transition-delay: 0.4s;
+}
+nav .links a:nth-of-type(5) {
+  transition-delay: 0.5s;
+}
+nav .links a:nth-of-type(6) {
+  transition-delay: 0.6s;
+}
+/*===============  Later End  ===============*/
+
+nav .line {
+  background-color: #707070;
+  width: 1px;
+  height: 490px;
+  margin-right: -85px;
+}
+nav .addresses {
+  color: #ffffff;
+}
+nav .addresses .address {
+  margin-top: 22px;
+  /* opacity: 0; */
+}
+
+/*===============  Later Start  ===============*/
+.hamburger-clicked nav .addresses .address {
+  opacity: 1;
+  transition: 1s;
+}
+nav .addresses .address:nth-of-type(1) {
+  transition-delay: 0.5s;
+}
+nav .addresses .address:nth-of-type(2) {
+  transition-delay: 0.6s;
+}
+nav .addresses .address:nth-of-type(3) {
+  transition-delay: 0.7s;
+}
+nav .addresses .address:nth-of-type(4) {
+  transition-delay: 0.8s;
+}
+/*===============  Later End  ===============*/
+
+nav .city p:first-of-type {
+  font-size: 24px;
+}
+nav .city p:nth-of-type(2) {
+  font-size: 30px;
+}
+nav .email a {
+  color: #ffffff;
+  font-size: 24px;
+  text-decoration: none;
+}
+nav .sociales {
+  display: flex;
+}
+nav .sociales .sociale {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 26px;
+}
+
+@media screen and (max-width: 1280px) {
+  .side-bar {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: auto;
+    padding: 10px 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  }
+  .logo {
+    width: 55px;
+    margin-top: 10px;
+  }
+  .hamburger {
+    margin-top: 0;
+    margin-top: -8.5px;
+    order: 2;
+  }
+  nav {
+    clip-path: circle(5% at 94.5% 5.2%);
+  }
+  nav .navbar-container {
+    max-width: none;
+    padding: 2rem;
+    position: relative;
+    justify-content: space-around;
+  }
+  nav .line {
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  nav .addresses,
+  nav .line {
+    display: none;
+  }
+  nav .links {
+    align-items: center;
+    width: 100%;
+  }
+}
